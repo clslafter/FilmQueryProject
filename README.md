@@ -17,13 +17,13 @@ Eclipse, MacOs, MySql, SQL, MAMP, git, GitHub, Java, Atom
 
 For some reason, I had a logic block when it came to setting the list of actors into the
 film object as the film was being called by the database. This was easily solved by calling the appropriate
-method inside the methods where film were being pulled from the database.
+method inside the methods where films were being pulled from the database.
 
 The next challenge I came across was realizing that reading the database with a keyword could
 potentially create zero to multiple films and solved that logic problem by returning a List of 
 films from the method, rather than just one.
 
-The other challenges involved remembering that the list size would be == to zero if no films were found
-(not null), using an InputMismatchException rather than a  more generic exception so that my try could make
+The other challenges involved remembering that the list size would be == 0 if no films were found
+(not .equals(null)), using an InputMismatchException rather than a  more generic exception so that my try could make
 an appropriate message for a filmID that returned null, and remembering that dastardly nextLine statment for the scanner
-so that things didn't get wiggy.
+so that things don't get wiggy.
