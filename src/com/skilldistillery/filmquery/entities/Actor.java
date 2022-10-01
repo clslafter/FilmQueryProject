@@ -1,5 +1,6 @@
 package com.skilldistillery.filmquery.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Actor {
@@ -7,6 +8,7 @@ public class Actor {
 	private int id;
 	private String firstName;
 	private String lastName;
+	private List<Film> films;
 	
 	public Actor () {}
 
@@ -40,6 +42,15 @@ public class Actor {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
+	
+	public List<Film> getFilms() {
+		return films;
+	}
+
+	public void setFilms(List<Film> films) {
+		this.films = films;
+	}
 
 	@Override
 	public int hashCode() {
@@ -61,7 +72,7 @@ public class Actor {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Actor - Id: ").append(id).append(", First Name: ").append(firstName).append(", Last Name: ")
+		builder.append("Actor Id: ").append(id).append(", Actor Name: ").append(firstName).append(" ")
 				.append(lastName).append(".");
 		return builder.toString();
 	}

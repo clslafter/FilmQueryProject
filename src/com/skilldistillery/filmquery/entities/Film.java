@@ -1,11 +1,13 @@
 package com.skilldistillery.filmquery.entities;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 public class Film {
 	private int id;
 	private String title;
+	private String description;
 	private int year;
 	private int languageId;
 	private int rentalDuration;
@@ -14,14 +16,16 @@ public class Film {
 	private double replacementCost;
 	private String rating;
 	private String specialFeatures;
+	private List<Actor> actors;
 	
 	public Film () {}
 
-	public Film(int id, String title, int year, int languageId, int rentalDuration, double rentalRate, int length,
+	public Film(int id, String title, String description, int year, int languageId, int rentalDuration, double rentalRate, int length,
 			double replacementCost, String rating, String specialFeatures) {
 		super();
 		this.id = id;
 		this.title = title;
+		this.description = description;
 		this.year = year;
 		this.languageId = languageId;
 		this.rentalDuration = rentalDuration;
@@ -46,6 +50,15 @@ public class Film {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public int getYear() {
@@ -111,6 +124,16 @@ public class Film {
 	public void setSpecialFeatures(String specialFeatures) {
 		this.specialFeatures = specialFeatures;
 	}
+	
+	
+
+	public List<Actor> getActors() {
+		return actors;
+	}
+
+	public void setActors(List<Actor> actors) {
+		this.actors = actors;
+	}
 
 	@Override
 	public int hashCode() {
@@ -138,11 +161,8 @@ public class Film {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Film - Id: ").append(id).append(", Title: ").append(title).append(", Year: ").append(year)
-				.append(", Language Id: ").append(languageId).append(", Rental Duration: ").append(rentalDuration)
-				.append(", Rental Rate: ").append(rentalRate).append(", Length: ").append(length)
-				.append(", Replacement Cost: ").append(replacementCost).append(", Rating: ").append(rating)
-				.append(", Special Features: ").append(specialFeatures).append(".");
+		builder.append("Film Id: ").append(id).append(", Film Title: ").append(title).append(",\nDescription: ")
+				.append(description).append(", \nRelease Year: ").append(year).append(", Rating: ").append(rating).append(", ");
 		return builder.toString();
 	}
 	
