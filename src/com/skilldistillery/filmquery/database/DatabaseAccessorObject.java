@@ -14,6 +14,9 @@ import com.skilldistillery.filmquery.entities.Film;
 public class DatabaseAccessorObject implements DatabaseAccessor {
 	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=US/Mountain";
 
+	String user = "student";
+	String pass = "student";
+
 	static {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -29,9 +32,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 //	  Implement the findFilmById method that takes an int film ID, 
 //	  and returns a Film object (or null, if the film ID returns no data.)
 		Film film = null;
-
-		String user = "student";
-		String pass = "student";
 
 //		SQL query in film table
 		String sql;
@@ -68,13 +68,10 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 	}// findFilmById method cb
 
 	@Override
-	public List <Film> findFilmsByKey(String key) throws SQLException {
+	public List<Film> findFilmsByKey(String key) throws SQLException {
 //		  Implement the findFilmByKey method that takes an String keyword, 
 //		  and returns a Film object (or null, if the film ID returns no data.)
-		List <Film> films = new ArrayList<>();
-
-		String user = "student";
-		String pass = "student";
+		List<Film> films = new ArrayList<>();
 
 //		SQL query in film table
 		String sql;
@@ -102,7 +99,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				int filmId = rs.getInt("id");
 				List<Actor> actors = findActorsByFilmId(filmId);
 				film.setActors(actors);
-				
+
 				films.add(film);
 			}
 			rs.close();
@@ -120,9 +117,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 //	and returns an Actor object (or null, if the actor ID returns no data.)
 
 		Actor actor = null;
-
-		String user = "student";
-		String pass = "student";
 
 //		SQL query in actor table
 		String sql;
@@ -156,9 +150,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		// Implement findActorsByFilmId with an appropriate List implementation
 //		that will be populated using a ResultSet and returned.
 		List<Actor> actors = new ArrayList<>();
-
-		String user = "student";
-		String pass = "student";
 
 //		SQL query in actor table
 		String sql;
@@ -201,8 +192,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		String language = null;
 
 //		takes a int filmId and returns the language of the film
-		String user = "student";
-		String pass = "student";
 
 //		SQL query in actor table
 		String sql;

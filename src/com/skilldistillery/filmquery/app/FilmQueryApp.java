@@ -20,18 +20,18 @@ public class FilmQueryApp {
     app.launch();
 	}
 
-	private void test() throws SQLException {
-		System.out.println();
-		Film film = db.findFilmById(4);
-		System.out.print(film);
-		System.out.println("Language: " + db.filmLanguageByFilmId(4));
-		List<Actor> actors = film.getActors();
-		for (Actor actor : actors) {
-			System.out.println(actor);
-		}
-		System.out.println("***************************************************");
-		System.out.println();
-	}
+//	private void test() throws SQLException {
+//		System.out.println();
+//		Film film = db.findFilmById(4);
+//		System.out.print(film);
+//		System.out.println("Language: " + db.filmLanguageByFilmId(4));
+//		List<Actor> actors = film.getActors();
+//		for (Actor actor : actors) {
+//			System.out.println(actor);
+//		}
+//		System.out.println("***************************************************");
+//		System.out.println();
+//	}
 
 	private void launch() throws SQLException {
 		Scanner sc = new Scanner(System.in);
